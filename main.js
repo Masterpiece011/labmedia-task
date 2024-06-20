@@ -24,6 +24,9 @@ const clearSearchBtn = document.getElementById('clearBtn');
 const searchInput = document.getElementById('searchInput')
 const deleteUserBtn = document.getElementById('deleteBtn')
 const closeModalBtn = document.getElementById('closeModal')
+const queryMessage = document.querySelector('.query-message')
+const queryMessageText = document.querySelector('.query-message p')
+console.log(queryMessage);
 
 const fetchUsers = async (retries = MAX_RETRIES) => {
     try {
@@ -127,8 +130,16 @@ function deleteUser(id) {
         }
     }
 
-    renderUsers(currentUsersData)
-    renderPagination(currentUsersData)
+    if (searchInput.value !== '') {
+        filteredUsersData = searchUsers(searchInput.value)
+        currentPage = 1
+        isUsersNotFound()
+        renderUsers(filteredUsersData)
+        renderPagination(filteredUsersData)
+    } else {
+        renderUsers(currentUsersData)
+        renderPagination(currentUsersData)
+    }
     closeModal()
 }
 
@@ -194,6 +205,15 @@ function sortUsersByRating() {
     renderPagination(sortedUsersData)
 }
 
+function isUsersNotFound() {
+    if (filteredUsersData.length == 0 && searchInput.value !== '') {
+        queryMessage.classList.add('active')
+        queryMessageText.textContent = `По запросу ${searchInput.value} пользователей не найдено`
+    } else {
+        queryMessage.classList.remove('active')
+    }
+}
+
 searchInput.addEventListener('input', () => {
     let query = searchInput.value
 
@@ -202,7 +222,10 @@ searchInput.addEventListener('input', () => {
     } else {
         clearSearchBtn.classList.remove('active')
     }
+
     filteredUsersData = searchUsers(query)
+    isUsersNotFound()
+    
     currentPage = 1
 
     renderUsers(filteredUsersData)
@@ -215,6 +238,7 @@ clearSearchBtn.addEventListener('click', () => {
     filteredUsersData = []
     clearSearchBtn.classList.remove('active')
 
+    isUsersNotFound()
     renderUsers(currentUsersData)
     renderPagination(currentUsersData)
 })

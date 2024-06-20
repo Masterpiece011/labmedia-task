@@ -66,6 +66,10 @@
     display: none;
     flex-direction: row;
     align-items: center;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: #4F4F4F;
     transition: all .3s ease;
     cursor: pointer;
     animation: clearBtnOut;
@@ -86,13 +90,6 @@
     width: 16px;
     height: 16px;
     margin-right: 4px;
-}
-
-.header__filter-clear p {
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 16px;
-    color: #4F4F4F;
 }
 
 .header__filter-clear:hover {

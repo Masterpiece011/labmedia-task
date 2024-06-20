@@ -48,6 +48,7 @@
     background-color: #fff;
     border-radius: 7px;
     min-height: 316px;
+    position: relative;
 }
 
 
@@ -99,6 +100,23 @@
 .main__table table th:last-child,
 .main__table table tr td:last-child{
     width: 30px;
+}
+
+.query-message {
+    position: absolute;
+    top: 63px;
+    left: 16px;
+    display: none;
+    z-index: 10;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    color: #9EAAB4;
+    text-align: left;
+}
+
+.query-message.active {
+    display: block;
 }
 
 .main__table table tr td {
