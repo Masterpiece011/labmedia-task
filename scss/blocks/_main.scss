@@ -1,0 +1,168 @@
+.main {
+    width: 100%;
+    position: relative;
+}
+
+.main__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.main__sorting {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    margin-bottom: 15px;
+}
+
+.main__sorting button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all .3s ease;
+    border-spacing: 10px;
+    border-bottom: 2px dashed #9EAAB4;
+    padding: 0;
+    margin-left: 8px;
+}
+
+.main__sorting button:hover {
+    color: #333333;
+    border-bottom: 2px dashed #333333;
+}
+
+.main__sorting p,
+.main__sorting button {
+    color: #9EAAB4;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 14px;
+}
+
+.main__table {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 16px;
+    background-color: #fff;
+    border-radius: 7px;
+    min-height: 316px;
+}
+
+
+.main__table table {
+    width: 100%;
+}
+
+.main__table table tr {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #F7F7F7;
+    padding-top: 14px;
+    padding-bottom: 20px;
+}
+
+.main__table table tr:last-child {
+    border-bottom: none;
+}
+
+.main__table table tr:first-child {
+    padding-top: 16px;
+    padding-bottom: 22px;
+}
+
+.main__table table th {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 10px;
+    color: #9EAAB4;
+    text-align: left;
+}
+
+.main__table table tr td:first-child {
+    color: #0CB4F1;
+}
+
+.main__table table th,
+.main__table table tr td {
+    width: 200px;
+}
+
+.main__table table tr td:last-child {
+    display: flex;
+    justify-content: center;
+}
+
+.main__table table th:last-child,
+.main__table table tr td:last-child{
+    width: 30px;
+}
+
+.main__table table tr td {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    color: #9EAAB4;
+    text-align: left;
+}
+
+.main__table table tr td button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    margin-right: 19px;
+    padding: 0;
+}
+
+.main__table table tr td button img {
+    height: 10px;
+    width: 10px;
+}
+
+.main__paginaton {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-sizing: border-box;
+    background-color: #fff;
+    align-self: center;
+    padding: 14px;
+    outline: 1px solid #dbdee0;
+    border-radius: 10px;
+}
+
+.main__pagintaion-item {
+    margin-right: 20px;
+    box-sizing: border-box;
+    background-color: transparent;
+    border: 1px solid #dbdee0;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 8px 12px;
+    transition: all .3s ease;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+}
+
+.main__pagintaion-item.active {
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #000;
+}
+
+.main__pagintaion-item:hover {
+    background-color: #000;
+    border: 1px solid #000;
+    color: #fff;
+}
+
+.main__pagintaion-item:last-child{
+    margin-right: 0;
+}
+
+

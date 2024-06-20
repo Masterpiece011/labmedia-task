@@ -1,0 +1,490 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #F7F7F7;
+  overflow-x: hidden;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1040px;
+}
+
+.header {
+  padding: 12px 0 72px;
+  width: 100%;
+}
+
+.header h1 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  margin-bottom: 20px;
+  color: #333333;
+}
+
+.header__wrapper {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 44px 16px 16px;
+  box-shadow: rgba(148, 148, 148, 0.1490196078) 0 18px 15px 0;
+  border-radius: 7px;
+}
+
+.header__filter {
+  width: 100%;
+  min-height: 74px;
+}
+
+.header__filter-field {
+  position: relative;
+}
+
+.header__filter-field input {
+  width: 100%;
+  outline: none;
+  border: none;
+  background-color: #ECEFF0;
+  border-radius: 4px;
+  position: relative;
+  box-sizing: border-box;
+  padding: 9px 31px;
+  margin-bottom: 24px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.header__filter-field input::placeholder {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #9EAAB4;
+}
+
+.header__filter-search-icon {
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  top: 5px;
+  left: 3px;
+  z-index: 120;
+}
+
+.header__filter-clear {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  animation: clearBtnOut;
+  animation-duration: 0.2s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+
+.header__filter-clear.active {
+  display: flex;
+  animation: clearBtnIn;
+  animation-duration: 0.2s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+
+.header__filter-clear img {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+}
+
+.header__filter-clear p {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #4F4F4F;
+}
+
+.header__filter-clear:hover {
+  opacity: 0.75;
+}
+
+.header__filter-clear:hover:active {
+  opacity: 1;
+  transition: none;
+}
+
+.header__wrapper h1 {
+  margin-bottom: 20px;
+}
+
+@keyframes clearBtnIn {
+  from {
+    display: flex;
+    opacity: 0;
+  }
+  to {
+    display: flex;
+    opacity: 1;
+  }
+}
+@keyframes clearBtnOut {
+  from {
+    display: flex;
+    opacity: 1;
+  }
+  to {
+    display: flex;
+    opacity: 0;
+  }
+}
+.main {
+  width: 100%;
+  position: relative;
+}
+
+.main__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main__sorting {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  margin-bottom: 15px;
+}
+
+.main__sorting button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-spacing: 10px;
+  border-bottom: 2px dashed #9EAAB4;
+  padding: 0;
+  margin-left: 8px;
+}
+
+.main__sorting button:hover {
+  color: #333333;
+  border-bottom: 2px dashed #333333;
+}
+
+.main__sorting p,
+.main__sorting button {
+  color: #9EAAB4;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 14px;
+}
+
+.main__table {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 16px;
+  background-color: #fff;
+  border-radius: 7px;
+  min-height: 316px;
+}
+
+.main__table table {
+  width: 100%;
+}
+
+.main__table table tr {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #F7F7F7;
+  padding-top: 14px;
+  padding-bottom: 20px;
+}
+
+.main__table table tr:last-child {
+  border-bottom: none;
+}
+
+.main__table table tr:first-child {
+  padding-top: 16px;
+  padding-bottom: 22px;
+}
+
+.main__table table th {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 10px;
+  color: #9EAAB4;
+  text-align: left;
+}
+
+.main__table table tr td:first-child {
+  color: #0CB4F1;
+}
+
+.main__table table th,
+.main__table table tr td {
+  width: 200px;
+}
+
+.main__table table tr td:last-child {
+  display: flex;
+  justify-content: center;
+}
+
+.main__table table th:last-child,
+.main__table table tr td:last-child {
+  width: 30px;
+}
+
+.main__table table tr td {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  color: #9EAAB4;
+  text-align: left;
+}
+
+.main__table table tr td button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin-right: 19px;
+  padding: 0;
+}
+
+.main__table table tr td button img {
+  height: 10px;
+  width: 10px;
+}
+
+.main__paginaton {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  box-sizing: border-box;
+  background-color: #fff;
+  align-self: center;
+  padding: 14px;
+  outline: 1px solid #dbdee0;
+  border-radius: 10px;
+}
+
+.main__pagintaion-item {
+  margin-right: 20px;
+  box-sizing: border-box;
+  background-color: transparent;
+  border: 1px solid #dbdee0;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 8px 12px;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.main__pagintaion-item.active {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #000;
+}
+
+.main__pagintaion-item:hover {
+  background-color: #000;
+  border: 1px solid #000;
+  color: #fff;
+}
+
+.main__pagintaion-item:last-child {
+  margin-right: 0;
+}
+
+.main__modal {
+  position: absolute;
+  box-sizing: border-box;
+  padding: 36px;
+  background-color: #fff;
+  border-radius: 8px;
+  top: 350px;
+  left: 680px;
+  z-index: 30;
+  display: none;
+  animation-name: fadeOut;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+.main__modal.active {
+  display: block;
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+
+.main__modal-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main__modal-wrapper p {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  margin-bottom: 24px;
+}
+
+.main__modal-buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.main__modal-buttons button {
+  background-color: #E0E0E0;
+  border: none;
+  padding: 6px 36px;
+  border-radius: 3px;
+  cursor: pointer;
+  color: #828282;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
+  transition: all 0.3s ease;
+}
+
+.main__modal-buttons button:last-child {
+  background-color: #0CB4F1;
+  color: #fff;
+}
+
+.main__modal-buttons button:hover {
+  transform: scale(1.1);
+}
+
+.main__modal-buttons button:hover:active {
+  opacity: 0.8;
+  transition: none;
+}
+
+.main__overlay {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 20;
+  animation-name: fadeOut;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+
+.main__overlay.active {
+  display: block;
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+
+@keyframes fadeIn {
+  from {
+    display: block;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    display: block;
+    opacity: 1;
+  }
+  to {
+    display: block;
+    opacity: 0;
+  }
+}
+@media screen and (max-width: 2350px) {
+  .main__modal {
+    left: 1010px;
+  }
+}
+@media screen and (max-width: 1750px) {
+  .main__modal {
+    left: 710px;
+  }
+}
+@media screen and (max-width: 1500px) {
+  .main__modal {
+    left: 580px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .main__modal {
+    left: 440px;
+  }
+}/*# sourceMappingURL=style.css.map */

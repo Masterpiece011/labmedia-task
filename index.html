@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Список пользователей</h1>
+            <div class="header__wrapper">
+                <div class="header__filter">
+                    <div class="header__filter-field">
+                        <img class="header__filter-search-icon" src="./img/search-icon.svg" alt="search-icon">
+                        <input id="searchInput" type="text" placeholder="Поиск по имени или email">
+                    </div>
+                    <button id="clearBtn" class="header__filter-clear">
+                        <img src="./img/clean.svg" alt="clen">
+                        Очистить фильтр
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <div class="main__wrapper container">
+            <div class="main__sorting">
+                <p>Сортировка:</p>
+                <button id="dateSort">Дата регистрации</button>
+                <button id="ratingSort">Рейтинг</button>
+            </div>
+            <div class="main__table container">
+                <table>
+                    <thead>
+                        <tr class="table-heading">
+                            <th>Имя пользователя</th>
+                            <th>E-mail</th>
+                            <th>Дата регистрации</th>
+                            <th>Рейтинг</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <div class="main__paginaton" id="pagination"></div>
+        </div>
+    </main>
+    <div class="main__overlay"></div>
+    <div class="main__modal">
+        <div class="main__modal-wrapper">
+            <p>Вы уверены, что хотите удалить пользователя</p>
+            <div class="main__modal-buttons">
+                <button id="deleteBtn">Да</button>
+                <button id="closeModal">Нет</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

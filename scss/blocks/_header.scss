@@ -1,0 +1,131 @@
+.header {
+    padding: 12px 0 72px;
+    width: 100%;
+}
+
+.header h1 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+.header__wrapper {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 44px 16px 16px;
+    box-shadow: #94949426 0 18px 15px 0;
+    border-radius: 7px;
+}
+
+.header__filter {
+    width: 100%;
+    min-height: 74px;
+}
+
+.header__filter-field {
+    position: relative;
+}
+
+.header__filter-field input {
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: #ECEFF0;
+    border-radius: 4px;
+    position: relative;
+    box-sizing: border-box;
+    padding: 9px 31px;
+    margin-bottom: 24px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.header__filter-field input::placeholder {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: #9EAAB4;
+}
+
+.header__filter-search-icon {
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    top: 5px;
+    left: 3px;
+    z-index: 120;
+}
+
+.header__filter-clear {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    transition: all .3s ease;
+    cursor: pointer;
+    animation: clearBtnOut;
+    animation-duration: .2s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+.header__filter-clear.active {
+    display: flex;
+    animation: clearBtnIn;
+    animation-duration: .2s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+.header__filter-clear img {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+}
+
+.header__filter-clear p {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: #4F4F4F;
+}
+
+.header__filter-clear:hover {
+    opacity: 0.75;
+}
+
+.header__filter-clear:hover:active {
+    opacity: 1;
+    transition: none;
+}
+
+.header__wrapper h1 {
+    margin-bottom: 20px;
+}
+
+@keyframes clearBtnIn {
+    from {
+        display: flex;
+        opacity: 0;
+    } 
+    to {
+        display: flex;
+        opacity: 1;
+    }
+}
+
+@keyframes clearBtnOut {
+    from {
+        display: flex;
+        opacity: 1;
+    } 
+    to {
+        display: flex;
+        opacity: 0;
+    }
+}
